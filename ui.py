@@ -1,6 +1,9 @@
+# Import the banking module to access banking functions
 import banking
 
+# Function to display the main menu of the bank system
 def main_menu():
+    # Display the main options for the user to choose from
     print("Welcome to Python Bank!")
     print("1. Create Account")
     print("2. Modify Account")
@@ -10,35 +13,22 @@ def main_menu():
     print("6. Withdraw")
     print("0. Exit")
 
+# Function to run the banking system
 def run():
+    # Start a loop to continuously show the menu and process user input
     while True:
+        # Show the main menu
         main_menu()
+        # Ask the user to choose an option
         choice = input("Choose an option: ")
 
+        # If the user chooses option 1 create a new account
         if choice == "1":
+            # Ask for account ID and name
             acc = input("Enter Account ID: ")
             name = input("Enter Name: ")
+            # Call create_account function from banking module
             print(banking.create_account(acc, name))
+        # If the user chooses option 2 modify an existing account
         elif choice == "2":
-            acc = input("Enter Account ID: ")
-            name = input("Enter New Name: ")
-            print(banking.modify_account(acc, name))
-        elif choice == "3":
-            acc = input("Enter Account ID: ")
-            print(banking.close_account(acc))
-        elif choice == "4":
-            acc = input("Enter Account ID: ")
-            print(f"Balance: ${banking.check_balance(acc)}")
-        elif choice == "5":
-            acc = input("Enter Account ID: ")
-            amount = float(input("Enter Amount: "))
-            print(banking.deposit(acc, amount))
-        elif choice == "6":
-            acc = input("Enter Account ID: ")
-            amount = float(input("Enter Amount: "))
-            print(banking.withdraw(acc, amount))
-        elif choice == "0":
-            print("Thank you for using Python Bank!")
-            break
-        else:
-            print("Invalid choice. Try again.")
+            # Ask for account ID and new name
